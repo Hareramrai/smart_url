@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch('POSTGRESQL_HOST', '') %>
+  password: <%= ENV.fetch('POSTGRESQL_PASSWORD', '') %>
+  username: <%= ENV.fetch('POSTGRESQL_USERNAME', '') %>
+development:
+  <<: *default
+  database: smart_url_development
+test:
+  <<: *default
+  database: smart_url_test
+
+production:
+  <<: *default
+  database: <%= ENV.fetch('POSTGRESQL_DBNAME', 'smart_url') %>
