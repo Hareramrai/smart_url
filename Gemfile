@@ -36,7 +36,8 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem 'knock'
 gem 'hashids'
-
+gem "browser"
+gem 'geocoder'
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery'
 end

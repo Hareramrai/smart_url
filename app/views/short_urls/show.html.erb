@@ -10,6 +10,10 @@
   <dd><%= link_to visit_url(@short_url.url_key), visit_path(@short_url.url_key) %></dd>
 </dl>
 
+<div class="row">
+  <%= render partial: 'analytics' %>
+</div>
+
 <%= link_to t('.back', :default => t("helpers.links.back")),
               short_urls_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

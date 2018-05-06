@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425083011) do
+ActiveRecord::Schema.define(version: 20180506151550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,4 +22,19 @@ ActiveRecord::Schema.define(version: 20180425083011) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "url_hits", force: :cascade do |t|
+    t.string "browser"
+    t.string "platform_name"
+    t.string "platform_version"
+    t.string "browser_version"
+    t.string "browser_type"
+    t.string "country"
+    t.string "city"
+    t.bigint "short_url_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["short_url_id"], name: "index_url_hits_on_short_url_id"
+  end
+
+  add_foreign_key "url_hits", "short_urls"
 end

@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Analytics Report</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <th>Country</th>
+        <th>City</th>
+        <th>Browser Type</th>
+        <th>Browser Version</th>
+        <th>Platform</th>
+        <th>Platform Version</th>
+      </thead>
+      <tbody>
+        <% @short_url.url_hits.each do |url_hit| %>
+          <tr>
+            <td><%= url_hit.country%></td>
+            <td><%= url_hit.city%></td>
+            <td><%= url_hit.browser_type%></td>
+            <td><%= url_hit.browser_version%></td>
+            <td><%= url_hit.platform_name%></td>
+            <td><%= url_hit.platform_version%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

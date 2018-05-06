@@ -53,6 +53,7 @@ GEM
     ast (2.4.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    browser (2.5.2)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (2.18.0)
@@ -85,6 +86,7 @@ GEM
     faker (1.8.7)
       i18n (>= 0.7)
     ffi (1.9.23)
+    geocoder (1.4.7)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashids (1.0.4)
@@ -253,12 +255,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  browser
   byebug
   capybara
   coffee-rails (~> 4.2)
   database_cleaner
   factory_bot_rails
   faker
+  geocoder
   hashids
   jbuilder (~> 2.5)
   knock

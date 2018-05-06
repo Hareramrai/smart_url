@@ -13,5 +13,4 @@ test:
   database: smart_url_test
 
 production:
-  <<: *default
-  database: <%= ENV.fetch('POSTGRESQL_DBNAME', 'smart_url') %>
+  url: <%= ENV['DATABASE_URL'] %>

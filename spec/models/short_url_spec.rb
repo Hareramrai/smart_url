@@ -6,6 +6,10 @@ RSpec.describe ShortUrl, type: :model do
     it { should validate_presence_of(:url) }
   end
 
+  describe 'associations' do
+    it { should have_many(:url_hits) }
+  end
+
   describe 'callbacks' do
     it 'execute update_url_key when gets created' do
       expect_any_instance_of(ShortUrl).to receive(:update_url_key)
