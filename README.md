@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* this web application can be improved by adding below 
+
+1) Replacing html table highchart for analytics 
+2) More data point can be added for better reporting
+3) Moving assests to CDN like cloud front for minimizing the load time .. 
+4) Page layout can be designed better 
+5) url hit can be moved to background 
+6) Short domain name can be useful to minimize the herokuapp domain name length.. 
