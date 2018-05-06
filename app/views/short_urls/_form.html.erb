@@ -1,0 +1,34 @@
+<%= form_for @short_url, :html => { :class => "form-horizontal short_url" } do |f| %>
+
+  <% if @short_url.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@short_url.errors.count, "error") %> prohibited this short_url from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @short_url.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :url, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :url, :class => 'form-control', placeholder: "Enter Full URL" %>
+    </div>
+    <%=f.error_span(:url) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                short_urls_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
